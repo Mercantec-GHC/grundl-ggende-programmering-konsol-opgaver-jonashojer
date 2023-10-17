@@ -1,56 +1,57 @@
-﻿Random dice = new Random();
+﻿using System;
 
-int roll1 = dice.Next(1, 7);
-int roll2 = dice.Next(1, 7);
-int roll3 = dice.Next(1, 7);
+// initialize variables - graded assignments 
+int currentAssignments = 5;
 
-int total = roll1 + roll2 + roll3;
+int sophia1 = 90;
+int sophia2 = 86;
+int sophia3 = 87;
+int sophia4 = 98;
+int sophia5 = 100;
 
-Console.WriteLine($"Dice roll: {roll1} + {roll2} + {roll3} = {total}");
+int andrew1 = 92;
+int andrew2 = 89;
+int andrew3 = 81;
+int andrew4 = 96;
+int andrew5 = 90;
 
-if ((roll1 == roll2) || (roll2 == roll3) || (roll1 == roll3)) {
-	if((roll1 == roll2) && (roll2 == roll3)) {
-		Console.WriteLine("You rolled doubles! +6 bonus to total!");
-		total += 6;
-	}else {
-		Console.WriteLine("You rolled doubles! +2 bonus to total!");
-		total += 2;
-	}
-}
+int emma1 = 90;
+int emma2 = 85;
+int emma3 = 87;
+int emma4 = 98;
+int emma5 = 68;
 
+int logan1 = 90;
+int logan2 = 95;
+int logan3 = 87;
+int logan4 = 88;
+int logan5 = 96;
 
-// Vil være smartere med en switch her
-/*switch (total){
-	case >= 16:
-		Console.WriteLine("You win a new car!");
-		break;
+int sophiaSum = 0;
+int andrewSum = 0;
+int emmaSum = 0;
+int loganSum = 0;
 
-	case >= 10:
-		Console.WriteLine("You win a new laptop!");
-		break;
+decimal sophiaScore;
+decimal andrewScore;
+decimal emmaScore;
+decimal loganScore;
 
-	case 7:
-		Console.WriteLine("You win a trip for two!");
-		break;
+sophiaSum = sophia1 + sophia2 + sophia3 + sophia4 + sophia5;
+andrewSum = andrew1 + andrew2 + andrew3 + andrew4 + andrew5;
+emmaSum = emma1 + emma2 + emma3 + emma4 + emma5;
+loganSum = logan1 + logan2 + logan3 + logan4 + logan5;
 
-	default:
-		Console.WriteLine("You win a kitten!");
-		break;
-}*/
+sophiaScore = (decimal)sophiaSum / currentAssignments;
+andrewScore = (decimal)andrewSum / currentAssignments;
+emmaScore = (decimal)emmaSum / currentAssignments;
+loganScore = (decimal)loganSum / currentAssignments;
 
-if (total >= 16)
-{
-	Console.WriteLine("You win a new car!");
-}
-else if (total >= 10)
-{
-	Console.WriteLine("You win a new laptop!");
-}
-else if (total == 7)
-{
-	Console.WriteLine("You win a trip for two!");
-}
-else
-{
-	Console.WriteLine("You win a kitten!");
-}
+Console.WriteLine("Student\t\tGrade\n");
+Console.WriteLine("Sophia:\t\t" + sophiaScore + "\tA-");
+Console.WriteLine("Andrew:\t\t" + andrewScore + "\tB+");
+Console.WriteLine("Emma:\t\t" + emmaScore + "\tB");
+Console.WriteLine("Logan:\t\t" + loganScore + "\tA-");
+
+Console.WriteLine("Press the Enter key to continue");
+Console.ReadLine();
