@@ -37,10 +37,7 @@
 //Console.WriteLine($"Discount: {(saleAmount > 1000 ? 100 : 50)}");
 
 Random random = new Random();
-
-int dice = random.Next(1, 21);
-
-string result = dice > 10 ? "Heads" : "Tails";
-
+int coin = random.Next(1, 21);
+string result = coin > 10 ? "Heads" : "Tails";
 Console.WriteLine(result);
 
