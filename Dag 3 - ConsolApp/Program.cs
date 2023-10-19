@@ -223,22 +223,141 @@
 //}
 
 
-for (int i = 1; i < 101; i++)
+//for (int i = 1; i < 101; i++)
+//{
+//	if ((i % 3 == 0) && (i % 5 == 0))
+//	{
+//		Console.WriteLine($"{i} FizzBuzz");
+//	}
+//	else if (i % 5 == 0)
+//	{
+//		Console.WriteLine($"{i} Buzz");
+//	}
+//	else if (i % 3 == 0)
+//	{
+//		Console.WriteLine($"{i} Fizz");
+//	}
+//	else
+//	{
+//		Console.WriteLine(i);
+//	}
+//}
+
+//Random random = new Random();
+//int current = random.Next(1, 11);
+
+///*
+//do
+//{
+//	current = random.Next(1, 11);
+//	Console.WriteLine(current);
+//} while (current != 7);
+//*/
+
+//while (current >= 3) {
+//	Console.WriteLine(current);
+//	current = random.Next(1, 11);
+//}
+//Console.WriteLine($"Last number: {current}");
+
+//Random random = new Random();
+//int current = random.Next(1, 11);
+
+//do
+//{
+//	current = random.Next(1, 11);
+
+//	if (current >= 8) continue;
+
+//	Console.WriteLine(current);
+//} while (current != 7);
+
+//int hero = 10;
+//int monster = 10;
+
+//Random dice = new Random();
+
+//do
+//{
+//	int roll = dice.Next(1, 11);
+//	monster -= roll;
+//	Console.WriteLine($"Monster was damaged and lost {roll} health and now has {monster} health.");
+
+//	if (monster <= 0) continue;
+
+//	roll = dice.Next(1, 11);
+//	hero -= roll;
+//	Console.WriteLine($"Hero was damaged and lost {roll} health and now has {hero} health.");
+
+//} while (hero > 0 && monster > 0);
+
+//Console.WriteLine(hero > monster ? "Hero wins!" : "Monster wins!");
+
+//string? readResult;
+//int numericResult = 0;
+//bool validEntry = false;
+//Console.WriteLine("Please enter a interger between 5 and 10");
+//do
+//{
+//	readResult = Console.ReadLine();
+//	int.TryParse(readResult, out numericResult);
+//	if (numericResult != null)
+//	{
+//		if ((numericResult >= 5) && (numericResult <= 10))
+//		{
+//			validEntry = true;
+//		}
+//		else
+//		{
+//			Console.WriteLine("Your input is invalid, please try again.");
+//		}
+//	}
+//} while (validEntry == false);
+
+//string? readResult;
+//bool validEntry = false;
+
+//Console.WriteLine("Enter your role name (Administrator, Manager, or User)\n");
+
+//do
+//{
+//	readResult = Console.ReadLine();
+//	readResult = readResult.Trim();
+//	if ((readResult.ToLower() == "administrator") || (readResult.ToLower() == "manager") || (readResult.ToLower() == "user")) {
+//		Console.WriteLine($"Your input value ({readResult}) has been accepted.\n");
+//		validEntry = true;
+//	} else {
+//		Console.WriteLine($"The role name that you entered, \"{readResult}\" is not valid. Enter your role name (Administrator, Manager, or User)");
+//	}
+//} while (validEntry == false);
+
+string[] myStrings = new string[2] { "I like pizza. I like roast chicken. I like salad", "I like all three of the menu choices" };
+int stringsCount = myStrings.Length;
+
+string myString = "";
+int periodLocation = 0;
+
+for (int i = 0; i < stringsCount; i++)
 {
-	if ((i % 3 == 0) && (i % 5 == 0))
+	myString = myStrings[i];
+	periodLocation = myString.IndexOf(".");
+
+	string mySentence;
+
+	while (periodLocation != -1)
 	{
-		Console.WriteLine($"{i} FizzBuzz");
+
+		mySentence = myString.Remove(periodLocation);
+
+		myString = myString.Substring(periodLocation + 1);
+
+		myString = myString.TrimStart();
+
+		periodLocation = myString.IndexOf(".");
+
+		Console.WriteLine(mySentence);
 	}
-	else if (i % 5 == 0)
-	{
-		Console.WriteLine($"{i} Buzz");
-	}
-	else if (i % 3 == 0)
-	{
-		Console.WriteLine($"{i} Fizz");
-	}
-	else
-	{
-		Console.WriteLine(i);
-	}
+
+	mySentence = myString.Trim();
+	Console.WriteLine(mySentence);
 }
